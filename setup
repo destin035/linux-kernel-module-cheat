@@ -6,14 +6,14 @@ if [ $# -eq 1 ]; then
 else
   y=
 fi
-if [ -f /.dockerenv ]; then
+if [ -f /run/.containerenv ]; then
   sudo=
   export DEBIAN_FRONTEND=noninteractive
 else
   sudo=sudo
 fi
 $sudo apt-get update
-if [ -f /.dockerenv ]; then
+if [ -f /run/.containerenv ]; then
   apt install -y software-properties-common
   add-apt-repository -y ppa:git-core/ppa
   $sudo apt update

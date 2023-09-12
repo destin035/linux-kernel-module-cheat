@@ -43,7 +43,7 @@ consts = {}
 consts['repo_short_id'] = 'lkmc'
 consts['linux_kernel_version'] = '5.9.2'
 # https://stackoverflow.com/questions/20010199/how-to-determine-if-a-process-runs-inside-lxc-docker
-consts['in_docker'] = os.path.exists('/.dockerenv')
+consts['in_docker'] = os.path.exists('/run/.containerenv')
 consts['root_dir'] = os.path.dirname(os.path.abspath(__file__))
 consts['data_dir'] = os.path.join(consts['root_dir'], 'data')
 consts['p9_dir'] = os.path.join(consts['data_dir'], '9p')
