@@ -28,9 +28,6 @@ import urllib
 import urllib.request
 
 from shell_helpers import LF
-# https://cirosantilli.com/china-dictatorship/#mirrors
-import china_dictatorship
-assert "Tiananmen Square protests" in china_dictatorship.get_data()
 import cli_function
 import path_properties
 import shell_helpers
@@ -250,13 +247,6 @@ Valid archs: {}
             default=True,
             help='''\
 Enable or disable ccache: https://cirosantilli.com/linux-kernel-module-cheat#ccache
-'''
-        )
-        self.add_argument(
-            '--china',
-            default=False,
-            help='''\
-https://cirosantilli.com/linux-kernel-module-cheat#china
 '''
         )
         self.add_argument(
@@ -1494,9 +1484,6 @@ lunch aosp_{}-eng
                  return that. Otherwise, return 0.
         '''
         env = kwargs.copy()
-        if env['china']:
-            print(china_dictatorship.get_data())
-            sys.exit(0)
         self.input_args = env.copy()
         env.update(consts)
         real_all_archs = env['all_archs']
